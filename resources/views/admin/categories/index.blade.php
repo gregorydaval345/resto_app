@@ -58,6 +58,7 @@
                                             <button type="submit">Delete</button>
                                         </form>
                                     </div>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

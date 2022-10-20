@@ -16,7 +16,8 @@
 
             <div class="m-2 p-2 bg-slate-300 rounded">
                 <div class="space-y-8 divide-y divide-gray-200 w-1/2 mt-10">
-                    <form method="POST" action="{{ route('admin.menus.update') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('admin.menus.update', $menu->id) }}"
+                        enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="sm:col-span-6">
@@ -78,7 +79,8 @@
                                 <select id="categories"n name="categories[]" class="form-multiselect block w-full mt-1"
                                     multiple>
                                     @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        <option value="{{ $category->id }}" @selected($menu->
+                                            categories->contains($category))>{{ $category->name }}</option>
                                     @endforeach
                                 </select>
 
