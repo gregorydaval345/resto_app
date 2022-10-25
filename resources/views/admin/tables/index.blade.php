@@ -21,7 +21,7 @@
                                 Table Name
                             </th>
                             <th scope="col" class="py-3 px-6">
-                                Guest Number
+                                Guest
                             </th>
                             <th scope="col" class="py-3 px-6">
                                 Status

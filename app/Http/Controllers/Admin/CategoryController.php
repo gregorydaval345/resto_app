@@ -97,8 +97,8 @@ class CategoryController extends Controller
             'description' => $request->description,
             'image' => $image
         ]);
-        
-        return to_route('admin.categories.index');
+
+        return to_route('admin.categories.index')->with('success', 'Category updated successfully');
     }
 
     /**
@@ -110,8 +110,11 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         Storage::delete($category->image);
+        /* Cant delete the parent table having data in child table
+        First you have to detach the child table and then delete the parent table */
+        $category->menus()->detach();
         $category->delete();
 
-        return to_route('admin.categories.index');
+        return to_route('admin.categories.index')->with('danger', 'Category deleted successfully');
     }
 }

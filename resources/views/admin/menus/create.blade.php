@@ -61,7 +61,7 @@
                                     step="0.01"
                                     class="block w-full appearance-none bg-white border rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-400 @enderror" />
                             </div>
-                            @error('image')
+                            @error('price')
                                 <div class="text-sm text-red-400">{{ $message }}</div>
                             @enderror
                         </div>
@@ -77,9 +77,6 @@
                                 </select>
 
                             </div>
-                            @error('categories')
-                                <div class="text-sm text-red-400">{{ $message }}</div>
-                            @enderror
                         </div>
                         <div class="mt-6 p-4">
                             <button type="submit"
